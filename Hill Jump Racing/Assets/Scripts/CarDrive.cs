@@ -155,12 +155,6 @@ public class CarDrive : MonoBehaviour
     void IsGameOver()
     {
         isGameOver = true;
-        backWheelRb.AddForce(new Vector2(0, 100f), ForceMode2D.Impulse);
-        frontWheelRb.AddForce(new Vector2(0, 100f), ForceMode2D.Impulse);
-        backWheel.breakForce = 100;
-        frontWheel.breakForce = 100;
-
-        Time.timeScale = 0;
 
     }
 

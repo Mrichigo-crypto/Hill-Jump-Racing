@@ -19,10 +19,15 @@ public class GameOverEvent : MonoBehaviour
     {
         rotation = car.transform.rotation.z;
         Debug.Log(rotation);
-        if( isFlipped && (rotation >= 0.9f && rotation <= 1f))
+        if( isFlipped && ((rotation >= 0.9f && rotation <= 1f) || (rotation <= -0.9f && rotation >= - 1f)))
         {
             gameOver.SetActive(true);
             
+        }
+
+        else if(car.transform.position.y <= -20f)
+        {
+            gameOver.SetActive(true);
         }
     }
     private void OnTriggerEnter2D(Collider2D other) 
